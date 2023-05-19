@@ -14,11 +14,11 @@ function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
 
     if (choice == 0) {
-        return ('Rock');
+        return ('rock'); /* Change to lowercase b/c of case insensitivity of playerSelection */
     } else if (choice == 1) {
-        return ('Paper');
+        return ('paper');
     } else {
-        return ('Scissors');
+        return ('scissors');
     }
     
 }
@@ -29,9 +29,25 @@ console.log(getComputerChoice());
 console.log(getComputerChoice());
 
 let playerSelection = prompt("Rock Paper Scissors Shoot!", "Type one of the following: Rock, Paper, Scissors")
-
+let computerSelection = getComputerChoice();
 
 console.log(playerSelection);
+
+function letsPlay(playerSelection,computerSelection) {
+
+
+    if(playerSelection.toLowerCase() === computerSelection()) {
+        return ("It's a tie! You both chose " + playerSelection);
+    }  else if (playerSelection.toLowerCase() === "rock" && computerSelection() === "scissors") {
+        return ("You Win! Rock beats Scissors.");
+    }  else if (playerSelection.toLowerCase() === "rock" && computerSelection() === "paper") {
+        return ("You Lose! Paper beats Rock.");
+    } else {
+        return ("Lets see if this works so far...");
+    }
+}
+letsPlay();
+letsPlay();
 
 /*
 function getComputerChoice() {
