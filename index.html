@@ -11,21 +11,20 @@
 
 function getComputerChoice() {
 
-    let choice = Math.floor(Math.random() * 3) + 1;
+    let choice = Math.floor(Math.random() * 3);
 
-    if (choice = 0) {
-        console.log('Rock');
-    } else if (choice = 1) {
-        console.log('Paper');
+    if (choice == 0) {
+        return ('Rock');
+    } else if (choice == 1) {
+        return ('Paper');
     } else {
-        console.log('Scissors');
+        return ('Scissors');
     }
     
-   
-    return choice;
-
 }
 
+console.log(getComputerChoice());
+console.log(getComputerChoice());
 console.log(getComputerChoice());
 console.log(getComputerChoice());
 console.log(getComputerChoice());
@@ -45,8 +44,6 @@ function getComputerChoice() {
         console.log('Scissors');
     }
     
-    console.log(choice);
-    console.log(choice);
     return choice;
 
 }
@@ -60,4 +57,3 @@ console.log(getComputerChoice());
 </body>
 
 </html>
-
