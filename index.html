@@ -33,97 +33,37 @@ let playerSelection = prompt("Rock Paper Scissors Shoot!", "Type one of the foll
 let computerSelection = getComputerChoice(); 
 let lowCase = playerSelection.toLowerCase();
 
-console.log(playerSelection);
-console.log('Break......');
-console.log(lowCase);
-console.log(computerSelection);
-console.log(computerSelection);
-console.log(computerSelection);
 
-if (lowCase == "rock" && computerSelection == "scissors") {
-        console.log("You Win! Rock beats Scissors.");
-    } else if (lowCase == "rock" && computerSelection == "paper") {
-        console.log("You Lose! Paper beats Rock.");
-    } else if (lowCase == "rock" && computerSelection == "rock") {
-        console.log("It's a tie! You both chose Rock.");
-    } else if (lowCase == "paper" && computerSelection == "scissors") {
-        console.log("You Lose! Scissors beats Paper.");
-    } else if (lowCase == "paper" && computerSelection == "rock") {
-        console.log("You Win! Paper beats Rock.");
-    } else if (lowCase == "paper" && computerSelection == "paper") {
-        console.log("It's a tie! You both chose Paper.");
-    } else if (lowCase == "scissors" && computerSelection == "rock") {
-        console.log("You Lose! Rock beats Scissors.");
-    } else if (lowCase == "scissors" && computerSelection == "paper") {
-        console.log("You Win! Scissors beat Paper.");
-    } else if (lowCase == "scissors" && computerSelection == "scissors") {
-        console.log("It's a tie! You both chose Scissors.");
-    } else {
-        console.log("Please enter a valid option.  Valid options: Rock, Paper, Scissors.");
-    }
 
-/*function letsPlay(lowCase,computerSelection) {
+
+/*
+function playGame(lowCase,computerSelection) {
     if (lowCase == "rock" && computerSelection == "scissors") {
-        console.log("You Win! Rock beats Scissors.");
+        return "You Win! Rock beats Scissors.";
     } else if (lowCase == "rock" && computerSelection == "paper") {
-        console.log("You Lose! Paper beats Rock.");
+        return "You Lose! Paper beats Rock.";
     } else if (lowCase == "rock" && computerSelection == "rock") {
-        console.log("It's a tie! You both chose Rock.");
+        return "It's a tie! You both chose Rock.";
     } else if (lowCase == "paper" && computerSelection == "scissors") {
-        console.log("You Lose! Scissors beats Paper.");
+        return "You Lose! Scissors beats Paper.";
     } else if (lowCase == "paper" && computerSelection == "rock") {
-        console.log("You Win! Paper beats Rock.");
+        return "You Win! Paper beats Rock.";
     } else if (lowCase == "paper" && computerSelection == "paper") {
-        console.log("It's a tie! You both chose Paper.");
+        return "It's a tie! You both chose Paper.";
     } else if (lowCase == "scissors" && computerSelection == "rock") {
-        console.log("You Lose! Rock beats Scissors.");
+        return "You Lose! Rock beats Scissors.";
     } else if (lowCase == "scissors" && computerSelection == "paper") {
-        console.log("You Win! Scissors beat Paper.");
+        return "You Win! Scissors beat Paper.";
     } else if (lowCase == "scissors" && computerSelection == "scissors") {
-        console.log("It's a tie! You both chose Scissors.");
+        return "It's a tie! You both chose Scissors.";
     } else {
-        console.log("Please enter a valid option.  Valid options: Rock, Paper, Scissors.");
+        return "Please enter a valid option.  Valid options: Rock, Paper, Scissors.";
     }
-}*/
-
-letsPlay();
-
-
-
-/* function letsPlay(playerSelection,computerSelection) {
-
-    let lowercaseSelection = (playerSelection || '').toLowerCase();
-
-
-    if(lowercaseSelection === "rock" && computerSelection() === "rock") {
-        return ("It's a tie! You both chose " + lowercaseSelection);
-    }  else if (lowercaseSelection === "rock" && computerSelection() === "scissors") {
-        return ("You Win! Rock beats Scissors.");
-    }  else if (lowercaseSelection === "rock" && computerSelection() === "paper") {
-        return ("You Lose! Paper beats Rock.");
-    } else if (lowercaseSelection === "paper" && computerSelection() === "scissors") {
-        return ("You Lose! Scissors beats Paper.");
-    } else if (lowercaseSelection === "paper" && computerSelection() === "rock") {
-        return ("You Win! Paper beats Rock.");
-    } else if (lowercaseSelection === "scissors" && computerSelection() === "paper") {
-        return ("You Win! Scissors beat Paper.");
-    } else if (lowercaseSelection === "scissors" && computerSelection() === "rock") {
-        return ("You Lose! Rock beats scissors.");
-    } else {
-        return ("Please enter a valid option. Valid options: Rock, Paper, Scissors.")
-    }
-} */
-
-console.log("....."); 
-
-/* Problem: the below 2 lines are not printing to the console*/
-console.log(lowercaseSelection);
-console.log(lowercaseSelection);
+} 
+*/
 
 /*
 function getComputerChoice() {
-
-    
 
     let choice = Math.floor(Math.random()* 3);
 
@@ -139,21 +79,6 @@ function getComputerChoice() {
 
 }
 
-console.log(getComputerChoice());
-console.log(getComputerChoice());
-console.log(getComputerChoice());
-
- =================================
- 
-    if(playerSelection.toLowerCase() === computerSelection()) {
-        return ("It's a tie! You both chose " + playerSelection);
-    }  else if (playerSelection.toLowerCase() === "rock" && computerSelection() === "scissors") {
-        return ("You Win! Rock beats Scissors.");
-    }  else if (playerSelection.toLowerCase() === "rock" && computerSelection() === "paper") {
-        return ("You Lose! Paper beats Rock.");
-    } else {
-        return ("Lets see if this works so far...");
-    }
 */
 
 </script>
