@@ -9,6 +9,7 @@
 <body>
 <script>
 
+let choices = ["rock", "paper","scissors"]
 
 function getComputerChoice() {
 
@@ -24,14 +25,45 @@ function getComputerChoice() {
     
 }
 
+function playerChoice() {
+    let playerSelection = prompt("Rock Paper Scissors Shoot!", "Type one of the following: Rock, Paper, Scissors");
+    while(playerSelection == null) {
+        playerSelection = prompt("Please type one of the following: Rock, Paper, Scissors");
+    }
+    playerSelection = playerSelection.toLowerCase();
+    console.log(playerSelection);
+    let check = confirmPlayerChoice(playerSelection);
+
+    if (check == true) {
+        console.log(playerSelection);
+    } else {
+        input = prompt("ERROR. Please type one of the following: Rock, Paper, Scissors.")
+    }
+    
+    playerSelection = playerSelection.toLowerCase();
+    check = confirmPlayerChoice(playerSelection);
+    return playerSelection;
+}
 
 console.log(getComputerChoice());
 console.log(getComputerChoice());
 console.log(getComputerChoice());
+console.log(".............");
 
-let playerSelection = prompt("Rock Paper Scissors Shoot!", "Type one of the following: Rock, Paper, Scissors");
+playerChoice();
+playerChoice();
+
+function confirmPlayerChoice(playerChoice) {
+    if (choices.includes(playerChoice)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/* let playerSelection = prompt("Rock Paper Scissors Shoot!", "Type one of the following: Rock, Paper, Scissors");
 let computerSelection = getComputerChoice(); 
-let lowCase = playerSelection.toLowerCase();
+let lowCase = playerSelection.toLowerCase(); */
 
 
 
