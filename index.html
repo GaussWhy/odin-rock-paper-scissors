@@ -11,7 +11,7 @@
 
 let choices = ["rock", "paper","scissors"]
 
-function getComputerChoice() {
+function getComputerChoice() {  /* Computer Selects one of the following: Rock, Paper, Scissors */
 
     let choice = Math.floor(Math.random() * 3);
 
@@ -25,7 +25,7 @@ function getComputerChoice() {
     
 }
 
-function playerChoice() {
+function playerChoice() { /* Prompts User to Enter one of the following: Rock, Paper, Scissors */
     let playerSelection = prompt("Rock Paper Scissors Shoot!", "Type one of the following: Rock, Paper, Scissors");
     while(playerSelection == null) {
         playerSelection = prompt("Please type one of the following: Rock, Paper, Scissors");
@@ -51,15 +51,29 @@ console.log(getComputerChoice());
 console.log(".............");
 
 playerChoice();
-playerChoice();
 
-function confirmPlayerChoice(playerChoice) {
+
+function confirmPlayerChoice(playerChoice) { /* Makes sure what you type in is Rock, Paper, or Scissors. */
     if (choices.includes(playerChoice)) {
         return true;
     } else {
         return false;
     }
 }
+
+function checkWinner(playerChoice,computerChoice) { /* Checks to see who wins between you and the computer */
+    if (playerChoice === computerChoice) {
+        return ("It's a tie.");
+    } else if ((playerChoice === "rock" && computerChoice === "scissors") ||
+    (playerChoice === "scissors" && computerChoice === "paper") ||
+    (playerChoice === "paper" ** computerChoice === "rock")) {
+        return ("Congrats! You Win!");
+    } else {
+        return ("Sorry, the computer wins.");
+    }
+}
+
+console.log(checkWinner());
 
 /* let playerSelection = prompt("Rock Paper Scissors Shoot!", "Type one of the following: Rock, Paper, Scissors");
 let computerSelection = getComputerChoice(); 
