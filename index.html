@@ -9,7 +9,7 @@
 <body>
 <script>
 
-let choices = ["rock", "paper","scissors"]
+let choices = ["rock", "paper","scissors"];
 
 function getComputerChoice() {  /* Computer Selects one of the following: Rock, Paper, Scissors */
 
@@ -45,9 +45,9 @@ function playerChoice() { /* Prompts User to Enter one of the following: Rock, P
     return playerSelection;
 }
 
+/* console.log(getComputerChoice());
 console.log(getComputerChoice());
-console.log(getComputerChoice());
-console.log(getComputerChoice());
+console.log(getComputerChoice()); */
 console.log(".............");
 
 playerChoice();
@@ -61,19 +61,23 @@ function confirmPlayerChoice(playerChoice) { /* Makes sure what you type in is R
     }
 }
 
-function checkWinner(playerChoice,computerChoice) { /* Checks to see who wins between you and the computer */
+function checkWinner(yourChoice, compChoice) { /* Checks to see who wins between you and the computer */
+    let computerChoice = getComputerChoice();
+
     if (playerChoice === computerChoice) {
         return ("It's a tie.");
-    } else if ((playerChoice === "rock" && computerChoice === "scissors") ||
-    (playerChoice === "scissors" && computerChoice === "paper") ||
-    (playerChoice === "paper" ** computerChoice === "rock")) {
+    } else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
+    (playerChoice === 'scissors' && computerChoice === 'paper') ||
+    (playerChoice === 'paper' && computerChoice === 'rock')) {
         return ("Congrats! You Win!");
     } else {
-        return ("Sorry, the computer wins.");
+        return ("Sorry, the computer wins."); /* CURRENT BUG: THE COMPUTER IS ALWAYS WINNING. */
     }
 }
 
 console.log(checkWinner());
+
+
 
 /* let playerSelection = prompt("Rock Paper Scissors Shoot!", "Type one of the following: Rock, Paper, Scissors");
 let computerSelection = getComputerChoice(); 
