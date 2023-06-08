@@ -9,7 +9,8 @@
 <body>
 <script>
 
-let choices = ["rock", "paper","scissors"];
+let choices = ["rock", "paper", "scissors"];
+
 
 function getComputerChoice() {  /* Computer Selects one of the following: Rock, Paper, Scissors */
 
@@ -24,6 +25,9 @@ function getComputerChoice() {  /* Computer Selects one of the following: Rock, 
     }
     
 }
+console.log("Computer choice : ............")
+console.log(getComputerChoice());
+
 
 function playerChoice() { /* Prompts User to Enter one of the following: Rock, Paper, Scissors */
     let playerSelection = prompt("Rock Paper Scissors Shoot!", "Type one of the following: Rock, Paper, Scissors");
@@ -31,26 +35,19 @@ function playerChoice() { /* Prompts User to Enter one of the following: Rock, P
         playerSelection = prompt("Please type one of the following: Rock, Paper, Scissors");
     }
     playerSelection = playerSelection.toLowerCase();
-    console.log(playerSelection);
+ 
     let check = confirmPlayerChoice(playerSelection);
 
     if (check == true) {
         console.log(playerSelection);
     } else {
-        input = prompt("ERROR. Please type one of the following: Rock, Paper, Scissors.")
+        playerSelection = prompt("ERROR. Please type one of the following: Rock, Paper, Scissors.")
     }
     
     playerSelection = playerSelection.toLowerCase();
     check = confirmPlayerChoice(playerSelection);
     return playerSelection;
 }
-
-/* console.log(getComputerChoice());
-console.log(getComputerChoice());
-console.log(getComputerChoice()); */
-console.log(".............");
-
-playerChoice();
 
 
 function confirmPlayerChoice(playerChoice) { /* Makes sure what you type in is Rock, Paper, or Scissors. */
@@ -61,21 +58,49 @@ function confirmPlayerChoice(playerChoice) { /* Makes sure what you type in is R
     }
 }
 
-function checkWinner(yourChoice, compChoice) { /* Checks to see who wins between you and the computer */
-    let computerChoice = getComputerChoice();
+function checkWinner(playerChoice, compChoice) {
 
-    if (playerChoice === computerChoice) {
+    if (playerChoice === compChoice) {
         return ("It's a tie.");
-    } else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
-    (playerChoice === 'scissors' && computerChoice === 'paper') ||
-    (playerChoice === 'paper' && computerChoice === 'rock')) {
+    } else if ((playerChoice === "rock" && compChoice === "scissors") ||
+    (playerChoice === "scissors" && compChoice === "paper") ||
+    (playerChoice === "paper" && compChoice === "rock")) {
         return ("Congrats! You Win!");
     } else {
-        return ("Sorry, the computer wins."); /* CURRENT BUG: THE COMPUTER IS ALWAYS WINNING. */
+        return ("Sorry, the Computer Wins.");
     }
 }
 
-console.log(checkWinner());
+function playRound() { /* How I fixed the error from the checkWinner function was to create this function. */
+    const playerSelection = playerChoice();
+    const computerSelection = getComputerChoice();
+    const winner = checkWinner(playerSelection, computerSelection);
+    console.log("You Chose: " + playerSelection);
+    console.log("The Computer Chose: " + computerSelection);
+    console.log("Result: " + winner);
+    console.log("End Round...");
+    
+}
+
+playRound();
+
+// function checkWinner(yourChoice, compChoice) { /* Checks to see who wins between you and the computer */
+
+   /* compChoice = getComputerChoice();
+
+    if (yourChoice === compChoice) {
+        return ("It's a tie.");
+    } else if ((yourChoice === 'rock' && compChoice === 'scissors') ||
+    (yourChoice === 'scissors' && compChoice === 'paper') ||
+    (yourChoice === 'paper' && compChoice === 'rock')) {
+        return ("Congrats! You Win!");
+    } else {
+        return ("Sorry, the computer wins."); 
+    } 
+} */
+
+
+
 
 
 
