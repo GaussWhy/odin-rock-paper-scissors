@@ -72,17 +72,26 @@ function checkWinner(playerChoice, compChoice) {
 }
 
 function playRound() { /* How I fixed the error from the checkWinner function was to create this function. */
-    const playerSelection = playerChoice();
-    const computerSelection = getComputerChoice();
-    const winner = checkWinner(playerSelection, computerSelection);
+    let playerSelection = playerChoice();
+    let computerSelection = getComputerChoice();
+    let winner = checkWinner(playerSelection, computerSelection);
     console.log("You Chose: " + playerSelection);
     console.log("The Computer Chose: " + computerSelection);
     console.log("Result: " + winner);
-    console.log("End Round...");
+    console.log("--End Round--");
     
 }
 
+function game() {
+    for(let i = 0; i < 5; i++) {
+        playRound();
+    }
+}
+
 playRound();
+console.log("...")
+game();
+
 
 // function checkWinner(yourChoice, compChoice) { /* Checks to see who wins between you and the computer */
 
