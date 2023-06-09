@@ -10,6 +10,7 @@
 <script>
 
 let choices = ["rock", "paper", "scissors"];
+let winners= [];
 
 
 function getComputerChoice() {  /* Computer Selects one of the following: Rock, Paper, Scissors */
@@ -25,8 +26,6 @@ function getComputerChoice() {  /* Computer Selects one of the following: Rock, 
     }
     
 }
-console.log("Computer choice : ............")
-console.log(getComputerChoice());
 
 
 function playerChoice() { /* Prompts User to Enter one of the following: Rock, Paper, Scissors */
@@ -75,23 +74,37 @@ function playRound() { /* How I fixed the error from the checkWinner function wa
     let playerSelection = playerChoice();
     let computerSelection = getComputerChoice();
     let winner = checkWinner(playerSelection, computerSelection);
+    winners.push(winner);
     console.log("You Chose: " + playerSelection);
     console.log("The Computer Chose: " + computerSelection);
     console.log("Result: " + winner);
-    console.log("--End Round--");
+    console.log("~~End Round~~");
     
+}
+
+function countWins() {
+    let playerWins = winners.filter((string) => (string) == "Congrats! You Win!").length;
+    let compWins = winners.filter((string) => (string) == "Sorry, the Computer Wins.").length;
+    let tie = winners.filter((string) => (string) == "It's a tie.").length;
+    
+    console.log("--Final Results--");
+    console.log("Player Wins: " + playerWins);
+    console.log("Computer wins: " + compWins);
+    console.log("Ties: " + tie);
 }
 
 function game() {
     for(let i = 0; i < 5; i++) {
         playRound();
     }
+    countWins();
 }
 
-playRound();
-console.log("...")
+
+
 game();
 
+// Compost Code
 
 // function checkWinner(yourChoice, compChoice) { /* Checks to see who wins between you and the computer */
 
@@ -107,17 +120,6 @@ game();
         return ("Sorry, the computer wins."); 
     } 
 } */
-
-
-
-
-
-
-/* let playerSelection = prompt("Rock Paper Scissors Shoot!", "Type one of the following: Rock, Paper, Scissors");
-let computerSelection = getComputerChoice(); 
-let lowCase = playerSelection.toLowerCase(); */
-
-
 
 
 /*
