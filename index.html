@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -57,7 +57,7 @@ function confirmPlayerChoice(playerChoice) { /* Makes sure what you type in is R
     }
 }
 
-function checkWinner(playerChoice, compChoice) {
+function checkWinner(playerChoice, compChoice) { /* Checks to see who won the round */
 
     if (playerChoice === compChoice) {
         return ("It's a tie.");
@@ -82,7 +82,7 @@ function playRound() { /* How I fixed the error from the checkWinner function wa
     
 }
 
-function countWins() {
+function countWins() { /* Keeps a count of who is winning each round */
     let playerWins = winners.filter((string) => (string) == "Congrats! You Win!").length;
     let compWins = winners.filter((string) => (string) == "Sorry, the Computer Wins.").length;
     let tie = winners.filter((string) => (string) == "It's a tie.").length;
@@ -93,7 +93,7 @@ function countWins() {
     console.log("Ties: " + tie);
 }
 
-function game() {
+function game() { /* Plays the game 5 times */
     for(let i = 0; i < 5; i++) {
         playRound();
     }
