@@ -11,12 +11,61 @@
 <button id="rock">Rock</button>
 <button id="paper">Paper</button>
 <button id="scissors">Scissors</button>
-    
+<br>
+<br>
+    <!-- Add a DIV for displaying results. The part I am stuck on: Updating these results after each round. -->
+    <div class="player-score">0</div>
+    <div class="comp-score">0</div>
 <script>
 
 let choices = ["rock", "paper", "scissors"];
 let winners= [];
 
+let playerScore = document.querySelector('.player-score');
+let compScore = document.querySelector('.comp-score');
+
+let playerWins = 0;
+let computerWins = 0;
+
+/* Add an event listener to the buttons that call your playRound function... */
+/* ...with the correct playerSelection every time a button is clicked */
+
+
+let rock = document.getElementById('rock');
+rock.addEventListener('click', (playRound) => {
+    let playerSelection = 'rock';
+    let computerSelection = getComputerChoice();
+    let winner = checkWinner(playerSelection, computerSelection);
+    winners.push(winner);
+    console.log("You Chose: " + playerSelection);
+    console.log("The Computer Chose: " + computerSelection);
+    console.log("Result: " + winner);
+    console.log("~~End Round~~");
+}); 
+
+let paper = document.getElementById('paper');
+paper.addEventListener('click', (playRound) => {
+    let playerSelection = 'paper';
+    let computerSelection = getComputerChoice();
+    let winner = checkWinner(playerSelection, computerSelection);
+    winners.push(winner);
+    console.log("You Chose: " + playerSelection);
+    console.log("The Computer Chose: " + computerSelection);
+    console.log("Result: " + winner);
+    console.log("~~End Round~~");
+});
+
+let scissors = document.getElementById('scissors');
+scissors.addEventListener('click', (playRound) => {
+    let playerSelection = 'scissors';
+    let computerSelection = getComputerChoice();
+    let winner = checkWinner(playerSelection, computerSelection);
+    winners.push(winner);
+    console.log("You Chose: " + playerSelection);
+    console.log("The Computer Chose: " + computerSelection);
+    console.log("Result: " + winner);
+    console.log("~~End Round~~");
+});
 
 function getComputerChoice() {  /* Computer Selects one of the following: Rock, Paper, Scissors */
 
@@ -83,6 +132,14 @@ function playRound() { /* How I fixed the error from the checkWinner function wa
     console.log("You Chose: " + playerSelection);
     console.log("The Computer Chose: " + computerSelection);
     console.log("Result: " + winner);
+    if (checkWinner === "Congrats! You Win!") {
+        playerWins++ ;
+    } else if (checkWinner === "Sorry, the Computer Wins.") {
+        computerWins++ ;
+    } else {
+        return ("It's a tie. Nobody wins.")
+    }
+
     console.log("~~End Round~~");
     
 }
@@ -103,6 +160,11 @@ function game() { /* Plays the game 5 times */
         playRound();
     }
     countWins();
+}
+
+function letsPlay() {
+    playerScore.textContent = playerWins;
+    compScore.textContent = compWins;
 }
 
 
